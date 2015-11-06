@@ -17,12 +17,16 @@ if( argv.w ) wrappers = argv.w;
 else if( argv.wrappers ) wrappers = argv.wrappers;
 
 var watch = false;
-if( argv.w !== undefined ) watch = true;
+if( argv.a !== undefined ) watch = true;
 else if( argv.watch !== undefined ) watch = true;
 
 var db = false;
 if( argv.d ) db = argv.d;
 else if( argv.database ) db = argv.database;
+
+var definitions = false;
+if( argv.e ) definitions = argv.e;
+else if( argv.definitions ) definitions = argv.definitions;
 
 if( !file || !namespace ) {
   console.log('file [-f || --file], namespace [-n || --namespace] and outfile [-o || --outfile] required');
@@ -35,6 +39,7 @@ es6ToPlv8({
   file: file,
   outfile: outfile,
   wrappers: wrappers,
+  definitions: definitions,
   watch : watch,
   db : db
 });

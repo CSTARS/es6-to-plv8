@@ -1,0 +1,27 @@
+{
+  "test" : {
+    "returns" : "text",
+    "params" : [
+      {
+        "type" : "text[]",
+        "name" : "keys"
+      },
+      {
+        "type" : "text[]",
+        "name" : "vals"
+      }
+    ]
+  },
+  
+  "test2" : {
+    "returns" : "text",
+    "params" : [
+      {
+        "type" : "text[]"
+      },
+      {
+        "type" : "text"
+      }
+    ]
+  }
+}

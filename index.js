@@ -1,6 +1,7 @@
 var browserify = require('browserify');
 var fs = require('fs');
 var exec = require('child_process').exec;
+var generateWrapper = require('./wrapper.js');
 
 var watchers = {};
 var options = {};
@@ -57,11 +58,14 @@ function rerun() {
   reader.pipe(writer);
   writer.on('close', function(){
     fs.appendFileSync(options.outfile, '\n'+FOOTER+'\n\n');
-    parseWrappers();
+
+    fs.appendFileSync(options.outfile, generateWrapper(options, watchers, rerun));
+
+    parseDefinedWrappers();
   });
 }
 
-function parseWrappers() {
+function parseDefinedWrappers() {
   if( !options.wrappers ) {
     afterRun();
     return;

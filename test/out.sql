@@ -10,13 +10,39 @@ module.exports = function() {
 },{}],2:[function(require,module,exports){
 module.exports = {
   foo : require('./foo'),
-  bar : 'baz'
+  bar : 'baz',
+
+  test : function(keys, vals) {
+    var o = {};
+    for(var i=0; i<keys.length; i++){
+      o[keys[i]] = vals[i];
+    }
+    return JSON.stringify(o);
+  },
+
+  test2 : function(keys, value) {
+    var o = {};
+    for(var i=0; i<keys.length; i++){
+      o[keys[i]] = value;
+    }
+    return JSON.stringify(o);
+  }
 };
 
 },{"./foo":1}]},{},[2])(2)
 });
 $function$;
 
+
+create or replace function Testing_test(keys text[], vals text[])
+  returns text as $$
+    return Testing.test(keys, vals);
+  $$ language plv8 IMMUTABLE STRICT;
+
+create or replace function Testing_test2(a text[], b text)
+  returns text as $$
+    return Testing.test2(a, b);
+  $$ language plv8 IMMUTABLE STRICT;
 
 create or replace function Testing_foo()
 returns text
@@ -25,3 +51,5 @@ as
 $$
 return Testing.foo();
 $$;
+
+

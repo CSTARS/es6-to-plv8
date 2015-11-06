@@ -50,6 +50,39 @@ Database you would like to insert the output .sql file into after the run in com
 psql -d [database] -f [outfile]
 ```
 
+### -e | --definitions
+
+Use a JSON schema file to write the SQL wrapper function definitions.
+An example of this file can be found in test/definitions.json.  You pass the
+the path to this definitions file.
+
+```js
+{
+  // function name
+  "test" : {
+    // function return type
+    "returns" : "text",
+
+    // function input parameters
+    "params" : [
+      {
+        // first input parameter type
+        "type" : "text[]",
+        // second input parameter name (optional)
+        //  - if not provided es6-to-plv8 will auto generate a name for you
+        "name" : "keys"
+      },
+      {
+        // first input parameter type
+        "type" : "text[]",
+        // second input parameter name (optional)
+        "name" : "vals"
+      }
+    ]
+  }
+}
+```
+
 
 ## PLV8 wrappers
 
