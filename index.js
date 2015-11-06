@@ -17,6 +17,7 @@ var FOOTER = '$function$;\n';
 
 function run(o) {
   options = o;
+  console.log(options);
 
   if( !fs.existsSync(options.file) ) {
     console.error('Invalid file: '+options.file);

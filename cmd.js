@@ -17,15 +17,16 @@ if( argv.w ) wrappers = argv.w;
 else if( argv.wrappers ) wrappers = argv.wrappers;
 
 var watch = false;
-if( argv.wa !== undefined ) watch = true;
+if( argv.w !== undefined ) watch = true;
 else if( argv.watch !== undefined ) watch = true;
 
-var db = '';
-if( argv.db ) database = argv.db;
+var db = false;
+if( argv.d ) database = argv.d;
 else if( argv.database ) database = argv.database;
 
 if( !file || !namespace ) {
   console.log('file [-f || --file], namespace [-n || --namespace] and outfile [-o || --outfile] required');
+  return;
 }
 
 var es6ToPlv8 = require('./index');
