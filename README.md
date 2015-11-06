@@ -4,7 +4,13 @@ Wrap an ES6 module so it can be used with PostgreSQL's [plv8 module](https://git
 ## Command Line Usage
 
 ```
-node cmd.js -n [namespace] -f [NodeJS file] -o [output file name] -w [optional: space or comma separated list of wrappers to include]
+node cmd.js
+    -n [namespace]
+    -f [NodeJS file]
+    -o [output file name]
+    -w [optional: space or comma separated list of wrappers to include]
+    -a [optional: watch files]
+    -d [optional: insert sql into db after build completes]
 ```
 
 ### -n | --namespace
@@ -31,6 +37,18 @@ You don't need to add .sql, it will be added to the filename by default.
 
 The files to be parsed and appended to the outfile.  These wrapper files should wrap your
 NodeJS functions with PLV8 function definitions.
+
+### -a | --watch
+
+Setup watchers on all required .js files as well as all .sql wrapper files.  Will automatically rerun build (and insert into db if below flag provided) whenever a file is changed on disk.
+
+### -d | --database
+
+Database you would like to insert the output .sql file into after the run in complete.  Basically runs the following command:
+
+```
+psql -d [database] -f [outfile]
+```
 
 
 ## PLV8 wrappers
