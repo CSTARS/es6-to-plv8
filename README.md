@@ -66,7 +66,20 @@ Note.  There are two namespaces here.
 - **ns**: which is the PLV8 namepace.  In our example it will be replaced with '*Test_*'
 - **jsns**: which is the NodeJS module exposed standalone namepace.  In our example it will be replaced with '*Test.*'
 
-So after running the es6-to-plv8 with the Test namespace and passing the test module and wrapper above then importing the generated .sql file into PostgreSQL you would run:
+So after running the es6-to-plv8 with the Test namespace and passing the test module and wrapper above then importing the generated .sql file you would have
+
+- JavaScript Land:
+```js
+Test.foo()
+```
+
+- PostgreSQL Land:
+```sql
+Test_init()
+Test_foo()
+```
+
+So in PostgreSQL you would run:
 
 ```sql
 postgres=# select Test_init();
