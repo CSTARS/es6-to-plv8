@@ -21,8 +21,8 @@ if( argv.w !== undefined ) watch = true;
 else if( argv.watch !== undefined ) watch = true;
 
 var db = false;
-if( argv.d ) database = argv.d;
-else if( argv.database ) database = argv.database;
+if( argv.d ) db = argv.d;
+else if( argv.database ) db = argv.database;
 
 if( !file || !namespace ) {
   console.log('file [-f || --file], namespace [-n || --namespace] and outfile [-o || --outfile] required');
