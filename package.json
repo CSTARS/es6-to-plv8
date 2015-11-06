@@ -1,0 +1,30 @@
+{
+  "name": "es6-to-plv8",
+  "version": "0.0.1",
+  "description": "Wrap an ES6 module so it can be used with PostgreSQL's plv8 module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CSTARS/es6-to-plv8.git"
+  },
+  "keywords": [
+    "es6",
+    "modules",
+    "plv8"
+  ],
+  "author": "Justin Merz <jrmerz@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CSTARS/es6-to-plv8/issues"
+  },
+  "homepage": "https://github.com/CSTARS/es6-to-plv8#readme",
+  "devDependencies": {
+    "browserify": "^12.0.1"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}
