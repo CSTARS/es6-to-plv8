@@ -15,7 +15,7 @@ to this namespace object.  So a module exposing methods foo() and bar() with
 namespace Test will be called in PLV8 via Test.foo() and Test.bar()
 - A [namespace]\_init() sql function will be created, wrapping the browserify code.
 This function has to be called first before used any other function.
-- An files passed in the wrapper list will be have their namespace templates replaced.  See
+- Any files passed in the wrapper list will be have their namespace templates replaced.  See
 more info about the namespace templates below.
 
 ### -f | --file
@@ -63,8 +63,8 @@ $$;
 ```
 
 Note.  There are two namespaces here.
-- **ns**: which is the PLV8 namepace.  In our example it will be replaced with *Test_*
-- **jsns**: which is the NodeJS module exposed standalone namepace.  In our example it will be replaced with *Test.*
+- **ns**: which is the PLV8 namepace.  In our example it will be replaced with '*Test_*'
+- **jsns**: which is the NodeJS module exposed standalone namepace.  In our example it will be replaced with '*Test.*'
 
 So after running the es6-to-plv8 with the Test namespace and passing the test module and wrapper above then importing the generated .sql file into PostgreSQL you would run:
 
