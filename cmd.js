@@ -16,9 +16,24 @@ var wrappers = '';
 if( argv.w ) wrappers = argv.w;
 else if( argv.wrappers ) wrappers = argv.wrappers;
 
+var watch = false;
+if( argv.wa !== undefined ) watch = true;
+else if( argv.watch !== undefined ) watch = true;
+
+var db = '';
+if( argv.db ) database = argv.db;
+else if( argv.database ) database = argv.database;
+
 if( !file || !namespace ) {
   console.log('file [-f || --file], namespace [-n || --namespace] and outfile [-o || --outfile] required');
 }
 
 var es6ToPlv8 = require('./index');
-es6ToPlv8(namespace, file, outfile, wrappers);
+es6ToPlv8({
+  namespace: namespace,
+  file: file,
+  outfile: outfile,
+  wrappers: wrappers,
+  watch : watch,
+  db : db
+});
