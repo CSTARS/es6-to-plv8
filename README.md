@@ -11,6 +11,7 @@ node cmd.js
     -w [optional: space or comma separated list of wrappers to include]
     -a [optional: watch files]
     -d [optional: insert sql into db after build completes]
+    -e [optional: JSON schema file to write the SQL wrapper function definitions]
 ```
 
 ### -n | --namespace
