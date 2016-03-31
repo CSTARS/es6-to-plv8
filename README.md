@@ -11,7 +11,11 @@ node cmd.js
     -w [optional: space or comma separated list of wrappers to include]
     -a [optional: watch files]
     -d [optional: insert sql into db after build completes]
+<<<<<<< HEAD
     -b [optional: babelify config file]
+=======
+    -e [optional: JSON schema file to write the SQL wrapper function definitions]
+>>>>>>> 59e69089efb6557067bb5efbca357707e5cdf889
 ```
 
 ### -n | --namespace
