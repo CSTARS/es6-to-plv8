@@ -28,6 +28,10 @@ var definitions = false;
 if( argv.e ) definitions = argv.e;
 else if( argv.definitions ) definitions = argv.definitions;
 
+var babelify = '';
+if( argv.b ) babelify = argv.b;
+else if( argv.babelify ) babelify = argv.babelify;
+
 if( !file || !namespace ) {
   console.log('file [-f || --file], namespace [-n || --namespace] and outfile [-o || --outfile] required');
   return;
@@ -40,6 +44,7 @@ es6ToPlv8({
   outfile: outfile,
   wrappers: wrappers,
   definitions: definitions,
+  babelify : babelify,
   watch : watch,
   db : db
 });

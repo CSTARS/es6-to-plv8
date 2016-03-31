@@ -52,6 +52,10 @@ function rerun() {
     });
   }
 
+  if( options.babelify ) {
+    b.transform('babelify', eval('('+fs.readFileSync(options.babelify,'utf-8')+')'));
+  }
+
   var reader = b.bundle();
   var writer = fs.createWriteStream(options.outfile, {flags: 'a'});
 

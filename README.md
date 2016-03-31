@@ -11,6 +11,7 @@ node cmd.js
     -w [optional: space or comma separated list of wrappers to include]
     -a [optional: watch files]
     -d [optional: insert sql into db after build completes]
+    -b [optional: babelify config file]
 ```
 
 ### -n | --namespace
@@ -81,6 +82,14 @@ the path to this definitions file.
     ]
   }
 }
+```
+
+### -b | --babelify
+
+Babelify (transpile) 'Future' ESx code to currently support ES version.  
+
+```
+-b [/path/to/config/file]
 ```
 
 
