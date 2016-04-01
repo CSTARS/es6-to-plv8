@@ -1,6 +1,6 @@
 {
   "name": "es6-to-plv8",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Wrap an ES6 module so it can be used with PostgreSQL's plv8 module",
   "main": "index.js",
   "scripts": {
