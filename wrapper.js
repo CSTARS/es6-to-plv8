@@ -14,7 +14,7 @@ module.exports = function(options, watchers, rerun) {
 
   var definitions;
   try {
-    definitions = require(options.definitions);
+    definitions = eval('('+fs.readFileSync(options.definitions,'utf-8')+')');
   } catch(e) {
     console.error('Unable to load wrapper definitions.');
     console.error(e);
