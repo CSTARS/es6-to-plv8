@@ -10,8 +10,6 @@ var template =
 module.exports = function(options, watchers, rerun) {
   if( !options.definitions ) return '';
 
-  var used = {};
-
   var definitions;
   try {
     definitions = eval('('+fs.readFileSync(options.definitions,'utf-8')+')');
@@ -30,6 +28,7 @@ module.exports = function(options, watchers, rerun) {
 
   var sql = '', fn = '', params = [], jsparams = [];
   for( var fnname in definitions ) {
+    var used = {};    
     params = [];
     jsparams = [];
 
