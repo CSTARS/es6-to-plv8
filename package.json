@@ -1,8 +1,11 @@
 {
   "name": "es6-to-plv8",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Wrap an ES6 module so it can be used with PostgreSQL's plv8 module",
   "main": "index.js",
+  "bin": {
+    "es6-to-plv8": "bin/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

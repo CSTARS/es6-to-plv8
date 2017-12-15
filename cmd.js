@@ -34,6 +34,7 @@ else if( argv.babelify ) babelify = argv.babelify;
 
 if( !file || !namespace ) {
   console.log('file [-f || --file], namespace [-n || --namespace] and outfile [-o || --outfile] required');
+  console.log('See docs: https://github.com/CSTARS/es6-to-plv8');
   return;
 }
 
