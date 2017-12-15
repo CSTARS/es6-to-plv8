@@ -105,6 +105,7 @@ function afterRun() {
     var cmd = 'psql -d '+options.db+' -f '+options.outfile;
     console.log('Updating PostreSQL: '+cmd);
     exec(cmd, // command line argument directly in string
+      {maxBuffer: 1024 * 500},
       function (error, stdout, stderr) {      // one easy function to capture data/errors
         if (error !== null) {
           console.error('psql exec error: ');
